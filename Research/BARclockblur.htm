@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<link rel="icon" href="./favicon.png" type="image/png" />
+<link rel="shortcut icon" href="./favicon.png" type="image/png" />
+<title>Digital Image Processing</title>
+<meta name="description" content="Bialith scientific image processing, restoration and analysis software is free software. Deconvolution, measurement, 3D volumetric visualsation, automated registration, enhancement and batch processing are just some of the features. Applications: medicine, forensic imaging, histology, astronomy, physics, etc.">
+<meta name="keywords" content="Image, Processing, Deconvolution, Analysis, Software, Registration, Enhancement, FITS">
+<link rel="icon" href="./favicon.png" /> 
+<link rel="shortcut icon" href="./favicon.png" /> 
+</head>
+
+<body background="../Images/BAbg.JPG" bgcolor="silver" text="black" link="blue" vlink="purple" alink="red">
+
+<TABLE WIDTH="640" BORDER="0" CELLPADDING="4" CELLSPACING="0">
+
+ <TD ALIGN="left" VALIGN="TOP"><LEFT>
+  <IMG SRC="../Images/Ocean.png" BORDER=0 ALT="BiAlith"><BR>
+  <FONT FACE="Times New Roman" SIZE="4" COLOR="#C0C0FF"><B>BiAlith</B></FONT><P>
+  <FONT FACE="Arial" SIZE="2" COLOR="#000000">
+   <A HREF="../index.html"><img src="../Images/BAHome.png" border="0" ALT="Home"></a><BR>
+   <A HREF="../BADownloads.htm"><img src="../Images/BASoftware.png" border="0" ALT="Software"></a><BR>
+   <A HREF="../BAResearch.htm"><img src="../Images/BAResearch.png" border="0" ALT="Research"></a><BR>
+   <A HREF="../BALinks.htm"><img src="../Images/BALinks.png" border="0" ALT="Links"></a><BR><BR>
+   <A HREF="../BADisclaimer.htm"><img src="../Images/BADisclaimer.png" border="0" ALT="Disclaimer"></a><BR>
+   <A HREF="../BAAboutus.htm"><img src="../Images/BAAbout.png" border="0" ALT="About Us"></a><BR>
+  </B></FONT>
+ </TD>
+ <TD ALIGN="center" VALIGN="TOP">
+
+
+<table>
+<tr>
+<td width="840" height="100">
+<a href="https://www.optarc.co.uk/deconvolve/index.html"  target="New"><img src="../Images/DnBtn.png" border="0"><font size="2"> For the latest deconvolution results, click here.</font></a>
+<p align="center"><font face="Arial Rounded MT Bold" size="4">Comparison of 2-D Deconvolution Methods for Correction of Out-of-Focus Blur</font></p>
+<p align="left"><font size="2">Out-of-focus blur cannot be restored using 'advanced sharpening' tools like unsharp masking or even simple deconvolution methods like Van Cittert. This is partly due to the relatively large size of the PSF, the fact that the PSF is usually asymmetrical in practice and the fact that energy in the PSF is relatively evenly distributed across this large area. For Van Cittert deconvolution to succeed the PSF must be symmetrical and centre-dominant like a small Gaussian. The PSF for out-of-focus blur is a plain disc (not an Airy disc) in its simplest form but optical abberrations and diffraction effects will shape the disc in practice.</font></p>
+<p align="left"><font size="2">The results of applying several deconvolution methods to an image of a clock blurred by delibrate de-focus of the camera (not blurred in the computer - which is a much simpler problem) are presented below. These tests thus show the abilities of the algorithms to operate on real-world imagery with real noise and uncertainties. To see the results of a more controlled experiment with a synthetic object visit the <a href="BARAtest9.htm">'A Test'</a> page.<BR>
+In my earlier experiments with this clock image I allowed myself the luxury of having a large dark background around the clock to minimise boundary ringing effects. In real life, the boundary problem is not so obligingly attenuated and methods to overcome boundary effects are an important aspect of practical deconvolution algorithms. For this reason I now use a cropped version of the blurred image as input to the algorithms, ensuring that the crop rectangle cuts through part of the clock image to cause high contrast boundary transitions. The deconvolution algorithms have been extensively updated to handle asymmetric PSFs and I also employ advanced boundary ringing reduction technology. Boundary ringing should not be confused with the ringing due to high contrast structures intrinsic to the image - one solition to this problem is also shown below.</font></p>
+<p align="left"><font face="Arial Rounded MT Bold" size="1">01.01.2007</font> 
+<table border>
+<tr>
+<td height="262"><p><img src="../Images/ClockBlur/ClockBlur.jpg" align="left" border="0" hspace="10"><b>The original image of the focus blurred clock</b>.</p>
+<p><img src="../Images/ClockBlur/DCPSF33.jpg" align="left" border="0" hspace="10"><b>The PSF derived from measurements on the camera.</b></p>
+<p><b>Downloads of origininal image and PSF in FITS format:</b>
+<BR><font size="2">The images displayed on this web page are JPEG compressed. If you want to try the deconvolutions yourself download the zip-compressed FITS images of the clock and PSF below. These are stored to double precision floating point accuracy. A sample settings text file for Deconvolve.exe v2.0 is also available. <I>These images are copyright of Dr P. J. Tadrous and may not be published without his written permission.</I>:<BR>
+<a href="ClockB.zip"><img src="../Images/DownB.png" border="0" alt="Click to download blurred image"><b><i> Blurred image</i></b></a>.<BR>
+<a href="ClockPSF.zip"><img src="../Images/DownB.png" border="0" alt="Click to download the PSF"><b><i> PSF</i></b></a>.<BR>
+<a href="ClockDCS.zip"><img src="../Images/DownB.png" border="0" alt="Click to download the settings file"><b><i> Settings file</i></b></a>.</font>
+</td>
+</tr></table>
+
+<table border>
+
+
+
+<tr>
+<td width="969"  colspan="3"><p><b>Iterative Deconvolution by the Lucy-Richardson and Landweber Methods. </b><font size="2">The Landweber method gives a least squares solution and 
+Lucy-Richardson gives the maximum likelihood expectation maximisation solution. Landweber can cope with negative values but not Lucy-Richardson. Both 
+are amenable to my SOLVE method for boundary ringing reduction which is used in these results obtained with an alpha = 0.999 (Landweber only) and 
+Fourier convolutions for 512 iterations. a) Lucy-Richardson, b) Landweber solution, c) Internal ringing due to the clock handles and sharp right border are 
+greatly attenuated by weighting the deconvolution against these structures. This allows a greater degree of deconvolution limited only by noise amplification. 
+This result used 1024 Landweber iterations.</font></td>
+</tr>
+
+<tr>
+<td><img src="../Images/ClockBlur/LRdcpsf_512.jpg" border="0"></td>
+<td><p><img src="../Images/ClockBlur/LWdcpsf_512.jpg" border="0"></td>
+<td width="306"><p><img src="../Images/ClockBlur/LWnoring_1024.jpg" border="0"></td>
+</tr><tr>
+<td><p>a.</td>
+<td><p>b.</td>
+<td><p>c.</td>
+</tr>
+
+
+<tr>
+<td width="969"  colspan="3"><p><b>Maximum Entropy Method: Myrheim & Rue and Gull & Daniell. </b><font size="2">Based on the algorithms of Jan Myrheim and Haavard Rue (New 
+Algorithms for Maximum Entropy Image Restoration, </font><font size="2"><i>CVGIP: Graphical Models and Image Processing</i></font><font size="2">; </font><font size="2"><b>54</b></font><font size="2">(3):223-238, May 1992), this powerful method was 
+devised by SF Gull and GJ Daniell </font><font size="2"><i>(Nature</i></font><font size="2"> </font><font size="2"><b>272</b></font><font size="2">:686ff 1978). a) input, b) solution using MaxEnt 2 of Myrheim & Rue with a constant noise variance estimate 
+32 iterations using Myrheim & Rue's method for preventing boundary ringing, c) result of Gull & Daniell method after 512 iterations using my SOLVE method 
+for preventing boundary ringing. To see the effect if you don't use SOLVE, see the results for Weiner filtration below.</font></td>
+</tr>
+
+<tr>
+<td><img src="../Images/ClockBlur/ClockBlur.jpg" border="0"></td>
+<td><p><img src="../Images/ClockBlur/MEMRdcpsf_32.jpg" border="0"></td>
+<td width="306"><p><img src="../Images/ClockBlur/GDdcpsf_512.jpg" border="0"></td>
+</tr><tr>
+<td><p>a.</td>
+<td><p>b.</td>
+<td><p>c.</td>
+</tr>
+
+<tr>
+<td width="969"  colspan="3"><p><b>Weiner Filtration. </b><font size="2">This is a simplified Weiner filter (with Gamma=0.001) based on the formula in R.C. Gonzalez & R.E. Woods, Digital Image 
+Processing, 1992 and Eq.20 of Savakis, AE and Trussell, HJ, IEEE Trans. Image Proc.2(2):252-259 (1993). a) no boundary treatment, b) reflective boundary 
+treatment of Aghdasi F & Ward RK</font><font size="2"><i> IEEE Trans Image Proc</i></font><font size="2"> </font><font size="2"><b>5</b></font><font size="2">(4):611-618. This reduces but does not eliminate the boundary ringing. c) this result used my 
+variant boundary treatment which virtually eliminates boundary ringing at the expense of creating artefactual details at the boundaries of the solution (i.e. the 
+boundary pixels have not been solved - merely pacified). Because this is not an iterative technique, one cannot use my SOLVE method with it, so this is the 
+next best thing. If the SOLVE method is not employed in iterative deconvolution then ringing of the type shown in a) will result.</font></td>
+</tr>
+
+<tr>
+<td><img src="../Images/ClockBlur/SWdcpsf.jpg" border="0"></td>
+<td><p><img src="../Images/ClockBlur/SWdcpsf_e512CC.jpg" border="0"></td>
+<td width="306"><p><img src="../Images/ClockBlur/SWdcpsf_AR512CC.jpg" border="0"></td>
+</tr><tr>
+<td><p>a.</td>
+<td><p>b.</td>
+<td><p>c.</td>
+</tr>
+
+
+<tr>
+<td width="969"  colspan="2"><p><b>Van Cittert & Unsharp Masking. </b><font size="2">a) In this example, 64 iterations of the Van Cittert gives poor results here (more iterations were even worse). The 
+algorithm is based on the formula given in Ch5 of the Book 'A Practical Guide to CCD Astronomy' by Patrick Martinez and Alain Klotz, 1998 Cambridge 
+University Press, ISBN: 0521590639, b) The unsharp mask is also hopeless at correcting focus blur and is included for comparison as it is a much 
+acclaimed 'advanced sharpening' tool in commercial photo editing packages. My variant boundary treatment has been used in both cases.</font></td>
+</tr>
+
+<tr>
+<td><img src="../Images/ClockBlur/VCCropClock_62.jpg" border="0"></td>
+<td width="306"><p><img src="../Images/ClockBlur/USM4CropClock.jpg" border="0"></td>
+</tr><tr>
+<td><p>a.</td>
+<td><p>b.</td>
+</tr>
+
+</table>
+
+ </TD>
+ </TABLE>
+
+    <table>
+    <tr align="center">
+    <p align="center">&nbsp;Copyright <img src="../Images/c2.png" border="0" alt="Copyright"><font face="Arial Rounded MT Bold"> Dr P. J. Tadrous 2000-2026</font></p>
+    <p><font face="Arial" size="1" color="navy"><a href="../SiteMap.htm">Site Map</a></font></p>
+    </tr>
+    </table>
+
+
+</TABLE>
+</body>
+</html>

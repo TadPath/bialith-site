@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<link rel="icon" href="./favicon.png" type="image/png" />
+<link rel="shortcut icon" href="./favicon.png" type="image/png" />
+<title>Digital Image Processing</title>
+<meta name="description" content="Bialith scientific image processing, restoration and analysis software is free software. Deconvolution, measurement, 3D volumetric visualsation, automated registration, enhancement and batch processing are just some of the features. Applications: medicine, forensic imaging, histology, astronomy, physics, etc.">
+<meta name="keywords" content="Image, Processing, Deconvolution, Analysis, Software, Registration, Enhancement, FITS">
+<link rel="icon" href="./favicon.png" /> 
+<link rel="shortcut icon" href="./favicon.png" /> 
+</head>
+
+<body background="../Images/BAbg.JPG" bgcolor="silver" text="black" link="blue" vlink="purple" alink="red">
+
+<TABLE WIDTH="640" BORDER="0" CELLPADDING="4" CELLSPACING="0">
+
+ <TD ALIGN="left" VALIGN="TOP"><LEFT>
+  <IMG SRC="../Images/Ocean.png" BORDER=0 ALT="BiAlith"><BR>
+  <FONT FACE="Times New Roman" SIZE="4" COLOR="#C0C0FF"><B>BiAlith</B></FONT><P>
+  <FONT FACE="Arial" SIZE="2" COLOR="#000000">
+   <A HREF="../index.html"><img src="../Images/BAHome.png" border="0" ALT="Home"></a><BR>
+   <A HREF="../BADownloads.htm"><img src="../Images/BASoftware.png" border="0" ALT="Software"></a><BR>
+   <A HREF="../BAResearch.htm"><img src="../Images/BAResearch.png" border="0" ALT="Research"></a><BR>
+   <A HREF="../BALinks.htm"><img src="../Images/BALinks.png" border="0" ALT="Links"></a><BR><BR>
+   <A HREF="../BADisclaimer.htm"><img src="../Images/BADisclaimer.png" border="0" ALT="Disclaimer"></a><BR>
+   <A HREF="../BAAboutus.htm"><img src="../Images/BAAbout.png" border="0" ALT="About Us"></a><BR>
+  </B></FONT>
+ </TD>
+ <TD ALIGN="center" VALIGN="TOP">
+
+
+<table>
+<tr>
+<td width="600"  height="100">
+
+<p align="center"><font face="Arial Rounded MT Bold" size="4">Histogram Equalisation with Biaram's Hequalise</font></p>
+<p align="left"><font size="2">The Hequalise program is now available and it is linked to BiaQIm's GUI. Unlike the fixed histogram equalisation (HE) found on many commercial photo-retouching packages, hequalise can perform not only the standard full-frame HE (FFHE) but also the more advanced local area HE (LAHE) and even the powerful adaptive-neighbourhood HE (ANHE). For details of these methods see: Paranjape RB, Morrow WM and Rangayyan RM. "Adaptive-Neighbourhood Histogram Equalization for Image Enhancement", <i>CVGIP: Graphical Models and Image Processing</i> (1992); <b>54</b>(3):259-267. However, with hequalise you also get many more advanced options for demanding tasks. These inclde the ability to use arbitrary-shaped local neighbouhoods in LAHE (not just square or rectangular), global masking options and options re local and global dynamic range stretching as well as the ability to update the number of bins in the local histograms for LAHE and ANHE. Furthermore, colour images can be processed according to any channel of HSV or RGB independently and combined.<BR>The results of applying Hequalise to full colour images are shown in the table below. The standard 'Barbara' test image is used to illustrate the different algorithms on a colour image whereas part 
+of a scanned photograph illustrates a forensic application using LAHE with other BiaQIm features.
+</td></tr></table>
+
+<table border>
+<tr>
+<td width="969"  colspan="3"><font size="2"><b>Barbara Test Image: a) Original, b) FFHE and c) LAHE</b><BR>These images are shown half size and JPEGed. The FFHE result shows a general contrast improvement but under-represented areas&nbsp;(for example, the darkest regions such as the book-case in the background and the folds of Barbara's garments) are sacrificed. The LAHE methd (using a 15x15 pixel local neighbourhood) shows up details even in these shaded regions. It does tend to give an artificial look to the image overall but in some cases this is irrelevant (e.g. in forensic work when trying to get at details in shaded regions of a photograph or 'white-out' flared regions of security video footage). In other circumstances this can be viewed as a desireable 'artistic' effect for generating cover photos for books or adverts. In both FFHE and LAHE the processing was done solely on the Value (intensity) component of an HSV transform. The HSV cumulative histograms for these three images are shown below.</td>
+</tr>
+
+
+<tr>
+<td><img src="../Images/BabsOrig.JPG" border="0" alt="BabsOrig.JPG"></td>
+<td><p><img src="../Images/BabsFFHE.JPG" border="0" alt="BabsFFHE.JPG"></td>
+<td width="306"><p><img src="../Images/BabsLAHE.JPG" border="0" alt="BabsLAHE.JPG"></td>
+</tr><tr>
+<td><p>a.</td>
+<td><p>b.</td>
+<td><p>c.</td>
+</tr>
+
+
+<tr>
+<td width="969"  colspan="3"><font size="2"><b>Effect of b) FFHE and c) LAHE on the Cumulative Histogram</b><BR>These cumulative HSV histograms were generated using BiaQIm v2.40. The Hue chanel is shown in purple, the Saturation in yellow and the Value in cyan. It is the last of these we are processing. Compared with the histogram of the original (a), the FFHE makes the cumulative histogram a straight line (b) as predicted from HE theory. However, the FFHE process gives the histogram a regular and symmetrical sigmoid shape (c).</td>
+</tr>
+
+<tr>
+<td><img src="../Images/HgmOrig.png" border="0" alt="HgmOrig.png"></td>
+<td><p><img src="../Images/HgmFFHE.png" border="0" alt="HgmFFHE.png"></td>
+<td width="306"><p><img src="../Images/HgmLAHE.png" border="0" alt="HgmLAHE.png"></td>
+</tr><tr>
+<td><p>a.</td>
+<td><p>b.</td>
+<td><p>c.</td>
+</tr>
+
+</table>
+
+<table border>
+<tr>
+<td  colspan="5"><font size="2"><b>Detail of Bookcase: a) Original, b) FFHE, c) LAHE, d) ANHE t=15 s=5, e) ANHE t=5 s=3</b><BR>
+These are full-sized excerpts from the bookcase at the top left corner of the Barbara test image. Showing the efect of FFHE, LAHE and ANHE in enhancing this dark region when applied to the full image. ANHE is computationally intensive but can give visually superior results as the local neighbourhood is not only free to take any shape, but the shape is determined the underlying image characteristics - in this case similarity of intensity values. By varying the t and s parameters of ANHE (see the above publication for their meaning) one can alter the amount of detail (and noise) enhanced.</td>
+</tr>
+
+<tr>
+<td><img src="../Images/BookOrig.JPG" border="0" alt="BookOrig.JPG"></td>
+<td><p><img src="../Images/BookFFHE.JPG" border="0" alt="BookFFHE.JPG"></td>
+<td><p><img src="../Images/BookLAHE_15.JPG" border="0" alt="BookLAHE_15.JPG"></td>
+<td><p><img src="../Images/BookANHE_155.JPG" border="0" alt="BookANHE_155.JPG"></td>
+<td width="969"><p><img src="../Images/BookANHE_53.JPG" border="0" alt="BookANHE_53.JPG"></td>
+</tr><tr>
+<td><p>a.</td>
+<td><p>b.</td>
+<td><p>c.</td>
+<td><p>d.</td>
+<td><p>e.</td>
+</tr>
+
+</table>
+
+<table border>
+<tr>
+<td  colspan="4"><font size="2"><b>Forensic Application of BiaQIm in Enhancing a Latent Fingerprint</b><BR>In this example a fingerprint on the surface of a scanned photograph (which is all but invisible) is enhanced using HSV transformation, Saturation-based LAHE, Digital TV filtration and data value mapping using entirely BiaQIm tools (all available from this website). All images are reduced to half actual size and JPEGed. a) Original scan of part of a much larger photograph. b) The FFHE generated by a commercial photo re-touching package is shown for comparison to illustrate the limitations of such fixed FFHE tools for demanding work.c) shows BiaQIm LAHE applied only to the Saturation component of an HSV transform showing up the anlage of a fingerprint. d) Further enhancement by prior de-noising with the digital TV filter, followed by LAHE on saturation using advanced dynamic range options and data value mappings using BiaQIm. Although, quite rough, it should be remenbered that this print was extracted from an almost invisible starting point!</td>
+</tr>
+
+<tr>
+<td><img src="../Images/FingerOrig.JPG" border="0" alt="FingerOrig.JPG"></td>
+<td><p><img src="../Images/FingerPStud.JPG" border="0" alt="FingerPStud.JPG"></td>
+<td><p><img src="../Images/FingerLAHE.JPG" border="0" alt="FingerLAHE.JPG"></td>
+<td width="969"><p><img src="../Images/FingerPrint.JPG" border="0" alt="FingerPrint.JPG"></td>
+</tr><tr>
+<td><p>a.</td>
+<td><p>b.</td>
+<td><p>c.</td>
+<td><p>d.</td>
+</tr>
+
+</table>
+
+<table>
+<td width="600" height="100">
+
+
+ </TD>
+ </TABLE>
+
+    <table>
+    <tr align="center">
+    <p align="center">&nbsp;Copyright <img src="../Images/c2.png" border="0" alt="Copyright"><font face="Arial Rounded MT Bold"> Dr P. J. Tadrous 2000-2026</font></p>
+    <p><font face="Arial" size="1" color="navy"><a href="../SiteMap.htm">Site Map</a></font></p>
+    </tr>
+    </table>
+
+
+</TABLE>
+</body>
+</html>

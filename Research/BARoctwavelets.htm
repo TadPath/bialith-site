@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<link rel="icon" href="./favicon.png" type="image/png" />
+<link rel="shortcut icon" href="./favicon.png" type="image/png" />
+<title>Digital Image Processing</title>
+<meta name="description" content="Bialith scientific image processing, restoration and analysis software is free software. Deconvolution, measurement, 3D volumetric visualsation, automated registration, enhancement and batch processing are just some of the features. Applications: medicine, forensic imaging, histology, astronomy, physics, etc.">
+<meta name="keywords" content="Image, Processing, Deconvolution, Analysis, Software, Registration, Enhancement, FITS">
+<link rel="icon" href="./favicon.png" /> 
+<link rel="shortcut icon" href="./favicon.png" /> 
+</head>
+
+<body background="../Images/BAbg.JPG" bgcolor="silver" text="black" link="blue" vlink="purple" alink="red">
+
+<TABLE WIDTH="640" BORDER="0" CELLPADDING="4" CELLSPACING="0">
+
+ <TD ALIGN="left" VALIGN="TOP"><LEFT>
+  <IMG SRC="../Images/Ocean.png" BORDER=0 ALT="BiAlith"><BR>
+  <FONT FACE="Times New Roman" SIZE="4" COLOR="#C0C0FF"><B>BiAlith</B></FONT><P>
+  <FONT FACE="Arial" SIZE="2" COLOR="#000000">
+   <A HREF="../index.html"><img src="../Images/BAHome.png" border="0" ALT="Home"></a><BR>
+   <A HREF="../BADownloads.htm"><img src="../Images/BASoftware.png" border="0" ALT="Software"></a><BR>
+   <A HREF="../BAResearch.htm"><img src="../Images/BAResearch.png" border="0" ALT="Research"></a><BR>
+   <A HREF="../BALinks.htm"><img src="../Images/BALinks.png" border="0" ALT="Links"></a><BR><BR>
+   <A HREF="../BADisclaimer.htm"><img src="../Images/BADisclaimer.png" border="0" ALT="Disclaimer"></a><BR>
+   <A HREF="../BAAboutus.htm"><img src="../Images/BAAbout.png" border="0" ALT="About Us"></a><BR>
+  </B></FONT>
+ </TD>
+ <TD ALIGN="center" VALIGN="TOP">
+
+
+<table>
+<tr>
+<td width="600" height="100">
+<p align="center"><font face="Arial Rounded MT Bold" size="4">The use of the Wavelet Transform to De-Speckle OCT Images</font></p>
+<p align="left"><font size="2">Optical coherence tomography (OCT) is an imaging method which can visualise micro-structure down to a few mm below the surface of opaque tissues. It is often likened to ultrasound scanning but OCT uses infrared light instead of sound to provide microscopic (histological) resolution images. It shows promise as a potential non-invasive diagnostic biopsy procedure in medical practice. We work on the interpetation of OCT images in breast cancer using OCT systems designed and built by Dr Adrian Podoleanu's group at the School of Physical Sciences, University of Kent at Canterbury, UK. We are currently using medium resolution OCT systems originally designed for clinical ophthalmological applications. Resolution of OCT can be much higher than shown in these examples - e.g. resolutions of 1 micron are achievable.<BR>Because OCT uses light instead of sound it employs the techniques of interferometry to guage the depth of optical reflections comming back from various tissue planes. For this reason it is susceptiple to degradation by speckle 'noise' which arises due to alterations in optical path length difference cased by the presence of sub-resolution scatterers in the tissue. Much work has been done using thresholding schemes in the wavelet-domain for the de-speckling of other coherence-based imaging modalities degraded by speckle such as SAR imaging (synthetic aperture radar) and clinical ultrasound. However, these schemes can be quite complicated and meet with limited sucess. Unlike these prior approaches my method does not use thresholding in the wavelet domain but wavelet coefficient modulation. As no wavelet coefficients are lost one retains a maximum amount of information from the original image and this helps to preserve small details whilst removing speckle fluctuations.<BR>Below are images of a breast biopsy showing perineural invasion by ductal carcinoma of the breast. After OCT imaging the biopsy was processed in the usual way and sections cut for histology. A roughly corresponding H&E stained histological section is shown in a) together with a (de-speckled) OCT image in b) from roughly the same point inthe tissue (exact correspondence is difficult to achieve for technical reasons so the pictures do not entirely match).</font> 
+</td></tr></table>
+<table border>
+<tr>
+<td width="321"><p>a) H&E 
+<img src="../Images/WaveletOCT/wdsHE.JPG" border="0" alt="wdsHE.JPG"></td>
+<td width="302"><p>b) OCT 
+<img src="../Images/WaveletOCT/wdsO2d.JPG" border="0" alt="wdsO2d.JPG"></td>
+</tr></table><BR>
+<table>
+<tr>
+<td width="600" height="100">
+<p align="left"><font size="2">To illustrate the effectiveness of the new wavelet-based de-speckling procedure the following table shows raw OCT images (both single frame and 19 fame averages) together with the results of the wavelet-based de-speckler and a median filter. The averaged images show less speckle as the speckle phenomenon is a random event of fluctuation around the 'true' mean grey level. However, averaging requires a longer image capture time and sacrifices temporal resolution. The median filter is a classical speckle-reduction filter with edge-preserving properties however, it does tend to smear the image in a 'blocky' fashion so small details are obscured or obliterated. In the examples below the amount of median filtering was adjusted to give a highest peak signal-to-noise ratio (pSNR) possible. But even so the pSNR achievable by median filtering was lower than that achieved by the new wavelet method.</font> 
+</td></tr></table>
+
+<table border>
+<tr>
+<td width="969" colspan="3"><p><b>Results on A Single frame OCT Image</b></p>
+<p>Left to right: Original OCT, Wavelet-de-dpeckled, Median Filtered</td>
+</tr><tr>
+<td><img src="../Images/WaveletOCT/wdsO1o.JPG" border="0" alt="wdsO1o.JPG"></td>
+<td><p><img src="../Images/WaveletOCT/wdsO1d.JPG" border="0" alt="wdsO1d.JPG"></td>
+<td width="306"><p><img src="../Images/WaveletOCT/wdsO1m.JPG" border="0" alt="wdsO1m.JPG"></td>
+</tr><tr>
+<td><p>pSNR = 60 dB</td>
+<td><p>pSNR = 72.9 dB</td>
+<td><p>pSNR = 72.2 dB</td>
+</tr><tr>
+<td width="969" colspan="3"><p><b>A 19-Frame Average OCT Image</b></p>
+<p>Left to right: Original 19-fame-OCT-average, Wavelet-de-dpeckled, Median Filtered</td>
+</tr><tr>
+<td><img src="../Images/WaveletOCT/wdsO2o.JPG" border="0" alt="wdsO2o.JPG"></td>
+<td><p><img src="../Images/WaveletOCT/wdsO2d.JPG" border="0" alt="wdsO2d.JPG"></td>
+<td width="306"><p><img src="../Images/WaveletOCT/wdsO2m.JPG" border="0" alt="wdsO2m.JPG"></td>
+</tr><tr>
+<td><p>pSNR = 65 dB</td>
+<td><p>pSNR = 78 dB</td>
+<td width="306"><p>pSNR = 75 dB</td>
+</tr></table>
+<p>
+<table>
+<tr>
+<td width="600" height="100">
+
+ </TD>
+ </TABLE>
+
+    <table>
+    <tr align="center">
+    <p align="center">&nbsp;Copyright <img src="../Images/c2.png" border="0" alt="Copyright"><font face="Arial Rounded MT Bold"> Dr P. J. Tadrous 2000-2026</font></p>
+    <p><font face="Arial" size="1" color="navy"><a href="../SiteMap.htm">Site Map</a></font></p>
+    </tr>
+    </table>
+
+
+</TABLE>
+</body>
+</html>
+

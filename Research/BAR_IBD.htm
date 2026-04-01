@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<link rel="icon" href="./favicon.png" type="image/png" />
+<link rel="shortcut icon" href="./favicon.png" type="image/png" />
+<title>Digital Image Processing</title>
+<meta name="description" content="Bialith scientific image processing, restoration and analysis software is free software. Deconvolution, measurement, 3D volumetric visualsation, automated registration, enhancement and batch processing are just some of the features. Applications: medicine, forensic imaging, histology, astronomy, physics, etc.">
+<meta name="keywords" content="Image, Processing, Deconvolution, Analysis, Software, Registration, Enhancement, FITS">
+<link rel="icon" href="./favicon.png" /> 
+<link rel="shortcut icon" href="./favicon.png" /> 
+</head>
+
+<body background="../Images/BAbg.JPG" bgcolor="silver" text="black" link="blue" vlink="purple" alink="red">
+
+<TABLE WIDTH="640" BORDER="0" CELLPADDING="4" CELLSPACING="0">
+
+ <TD ALIGN="left" VALIGN="TOP"><LEFT>
+  <IMG SRC="../Images/Ocean.png" BORDER=0 ALT="BiAlith"><BR>
+  <FONT FACE="Times New Roman" SIZE="4" COLOR="#C0C0FF"><B>BiAlith</B></FONT><P>
+  <FONT FACE="Arial" SIZE="2" COLOR="#000000">
+   <A HREF="../index.html"><img src="../Images/BAHome.png" border="0" ALT="Home"></a><BR>
+   <A HREF="../BADownloads.htm"><img src="../Images/BASoftware.png" border="0" ALT="Software"></a><BR>
+   <A HREF="../BAResearch.htm"><img src="../Images/BAResearch.png" border="0" ALT="Research"></a><BR>
+   <A HREF="../BALinks.htm"><img src="../Images/BALinks.png" border="0" ALT="Links"></a><BR><BR>
+   <A HREF="../BADisclaimer.htm"><img src="../Images/BADisclaimer.png" border="0" ALT="Disclaimer"></a><BR>
+   <A HREF="../BAAboutus.htm"><img src="../Images/BAAbout.png" border="0" ALT="About Us"></a><BR>
+  </B></FONT>
+ </TD>
+ <TD ALIGN="center" VALIGN="TOP">
+
+
+<table>
+<tr>
+<td width="600" height="100">
+<a href="https://www.optarc.co.uk/deconvolve/index.html"  target="New"><img src="../Images/DnBtn.png" border="0"><font size="2"> For the latest deconvolution results, click here.</font></a>
+<p align="center"><font face="Arial Rounded MT Bold" size="4">Blind Deconvolution</font></p>
+<p align="left"><font size="2">Blind deconvolution is has a lofty goal: To recover <I>both</I> the deconvolved image <I>and</I> the PSF using just the blurred image and some constraints as input. Results from two algorithms are presented here: 1. the Iterative Blind Deconvolvution method of Ayers & Dainty (IBD Method) and 2. The Biggs-Lucy Iterative methods (BL Method). In both algorithms the required constraint information is quite minimal (i.e. non-negativity and support). The PSF is not known (often just a plain or random pixel field is used as prior estimate).
+<BR>In the Biaram program <I>DeconIB</I> I have implemented an IBD algorithm based on the Ayers & Dainty method: G. R. Ayers and J. C. Dainty, Iterative blind deconvolution method and its applications. <I>Optics Letters</I>, (1988); <B>13</B>:547-549.</BR>This method iterates between the Fourier and spatial domain imposing these constraints at each step to refine the solution.<BR>The results of applying this method to a 64 x 64 pixel synthetic image blurred in the computer by a PSF (a 9x9 pixel symmetrical geometric intensity progression) are presented here. The images are shown at twice actual size and are contrast stretched.
+<BR>In the Biaram program <I>DeconBMI</I> I have implemented the algorithm (see: D. S. C. Biggs and M. Andrews, Asymmetric iterative blind deconvolution of multiframe images. <I>Proc. SPIE</I>, (1998); <B>346</B>:1-33.
+<BR>This method iterates between a number of image-refineing cycles and a (usually different) number of PSF refining cycles at each major iteration to refine the solution. The 'cycles' are just iterations of a usual-type Lucy-Richardson method which uses the currest PSF estimate when doing image refinement and then switches the roles of image and PSF to use the current image estimate (as if it were a PSF) to refine the current PSF estimate<BR>The results of applying this method to a 64 x 64 pixel synthetic image blurred in the computer by a PSF (a 15x15 pixel asymmetrical PSF in the shape of a Greek 'Psi') are presented here. The images are shown at twice actual size and the PSF images are shown contrast stretched.
+</font>
+<BR><font face="Arial Rounded MT Bold" size="1">23.02.2008</font> 
+<H2>Experiment 1: Ayers & Dainty Method</H2>
+<table border>
+<tr>
+<td ><font size="2"><b>Ground Truth</b>: a) The test image, b) the true PSF. Neither of these images are used as input to the method.</td>
+</tr><tr>
+<td><font size="2">a)<img src="../Images/IBD/IB_Orig.png" border="0" height=128 width=128> b) <img src="../Images/IBD/IB_Geom9.png" border="0"  height=18 width=18></td>
+</tr><tr>
+<td><font size="2"><b>Input Images</b>: a) The blurred test image, b) The estimate of the PSF (a random pixel field). For this experiment I also use the known support area of the PSF (i.e. 9x9 pixels) but no information about the support of the image is used</td>
+</tr><tr>
+<td><font size="2">a)<img src="../Images/IBD/IB_Blur2G9.png" border="0" height=128 width=128> b)<img src="../Images/IBD/IB_PSFPrior.png" border="0" height=128 width=128></td>
+</tr><tr>
+<td><p><b>Result</b>: a) The estimate of the deconvolved image, b) The estimate of the PSF. These results were obtained after 524285 iterations.</td>
+</tr><tr>
+<td><font size="2">a)<img src="../Images/IBD/IB_img_524285.png" border="0" height=128 width=128> b)<img src="../Images/IBD/IB_psf_524285.png" border="0" height=128 width=128></td>
+</tr><tr>
+<td><font size="2"><b>Convergence Measure</b>: Unlike non-blind methods, the program does not have access to the true PSF so cannot use residuals as a measure of convergence (because residuals require you to convolve the current estimate with the PSF to see how close the result is to the input blurred image). For this reason we need some other measure of how good the current solution is likely to be. It makes sense to use some measure based on how close to the constraints the current solution is. Below is shown a graph of the image flux constraint (the true solution must have the same total flux as the input blurred image). This suggests that convergence is not uniform or stable. Things appear to get worse before settling down then the error shoots off the scale as the iterations increase. This unpredictability of convergence is just one of the many practical problems faced with blind deconvolution methods.</td>
+</tr><tr>
+<td><font size="2"><img src="../Images/IBD/IB_ImgSupEr.png" border="0"></td>
+</tr></table>
+<H2>Experiment 2: Biggs-Lucy Method</H2>
+<table border>
+<tr>
+<td><font size="2"><b>Input Images</b>: a) The blurred test image, b) The estimate of the PSF (a plain pixel field). For this experiment I also use the known support area of the PSF (i.e. 15x15 pixels). Knowledge of the maximum and minimum grey levels in the image solution was used for constraints but no information about the spatial support of the image is used. Ground truth image and PSF are not shown but are very similar to the results of the deconvolution shown below.</td>
+</tr><tr>
+<td><font size="2">a)<img src="../Images/IBD/BL_Img_0.png" border="0" height=128 width=128> b)<img src="../Images/IBD/BL_PSF_0.png" border="0" height=128 width=128></td>
+</tr><tr>
+<td><font size="2"><b>Result</b>: a) The estimate of the deconvolved image, b) The estimate of the PSF. These results were obtained after 1048576 major iterations. The image and PSF cycels were equally matched in this experiment at 1 cycle each per major iteration.</td>
+</tr><tr>
+<td><font size="2">a)<img src="../Images/IBD/BL_Img_F.png" border="0" height=128 width=128> b)<img src="../Images/IBD/BL_PSF_F.png" border="0" height=128 width=128></td>
+</tr><tr>
+<td><font size="2"><b>Convergence Measure</b>: The value for the 'residual' is calculated as the sum of the absolute differences from 1.0 of the ratio:&nbsp;(convolved estimate) / (input image)<BR>The result is divided by the number of pixels in the solution to give residual per pixel and is then multiplied by 100 to give the residual per 100 pixels. Iterations are shown on a log scale. Note the sudden 'bend' in the graph at about 100 iterations. This indicates a sudden 'snap' of the solution as it catches onto the 'right' path. It is clear that the solution velocity is complicated and not simply linear or logarithmic.</td>
+</tr><tr>
+<td><font size="2"><img src="../Images/IBD/BL_Resid.png" border="0"></td>
+</tr></table>
+
+ </TD>
+ </TABLE>
+
+    <table>
+    <tr align="center">
+    <p align="center">&nbsp;Copyright <img src="../Images/c2.png" border="0" alt="Copyright"><font face="Arial Rounded MT Bold"> Dr P. J. Tadrous 2000-2026</font></p>
+    <p><font face="Arial" size="1" color="navy"><a href="../SiteMap.htm">Site Map</a></font></p>
+    </tr>
+    </table>
+
+
+</TABLE>
+</body>
+</html>

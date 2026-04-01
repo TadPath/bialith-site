@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>BiAlith Image Processing Results</title>
+<link rel="icon" href="./favicon.png" type="image/png" />
+<link rel="shortcut icon" href="./favicon.png" type="image/png" />
+<title>Digital Image Processing</title>
+<meta name="description" content="Bialith scientific image processing, restoration and analysis software is free software. Deconvolution, measurement, 3D volumetric visualsation, automated registration, enhancement and batch processing are just some of the features. Applications: medicine, forensic imaging, histology, astronomy, physics, etc.">
+<meta name="keywords" content="Image, Processing, Deconvolution, Analysis, Software, Registration, Enhancement, FITS">
+<link rel="icon" href="./favicon.png" /> 
+<link rel="shortcut icon" href="./favicon.png" /> 
+
+<SCRIPT language="javascript">
+    <!--
+
+    // This code is derived from: The Michael Schrenk JavaScript 
+    // Animation Tutorial at http://www.schrenk.com/js/index.html
+
+    var bAnimate = true;
+
+    //-->
+    </SCRIPT>
+
+</head>
+
+<body background="Images/BAbg.JPG" bgcolor="silver" text="black" link="blue" vlink="purple" alink="red">
+
+<TABLE WIDTH="640" BORDER="0" CELLPADDING="4" CELLSPACING="0">
+
+ <TD ALIGN="left" VALIGN="TOP"><LEFT>
+  <IMG SRC="./Images/Ocean.png" BORDER=0 ALT="BiAlith"><BR>
+  <FONT FACE="Times New Roman" SIZE="4" COLOR="#C0C0FF"><B>BiAlith</B></FONT><P>
+  <FONT FACE="Arial" SIZE="2" COLOR="#000000">
+   <A HREF="./index.html"><img src="./Images/BAHome.png" border="0" ALT="Home"></a><BR>
+   <A HREF="./BADownloads.htm"><img src="./Images/BASoftware.png" border="0" ALT="Software"></a><BR>
+   <A HREF="./BAResearch.htm"><img src="./Images/BAResearch.png" border="0" ALT="Research"></a><BR>
+   <A HREF="./BALinks.htm"><img src="./Images/BALinks.png" border="0" ALT="Links"></a><BR><BR>
+   <A HREF="./BADisclaimer.htm"><img src="./Images/BADisclaimer.png" border="0" ALT="Disclaimer"></a><BR>
+   <A HREF="./BAAboutus.htm"><img src="./Images/BAAbout.png" border="0" ALT="About Us"></a><BR>
+  </B></FONT>
+ </TD>
+ <TD ALIGN="center" VALIGN="TOP">
+
+<p align="center"><font face="Arial Rounded MT Bold" size="5" color="#800040">BiAlith Research Results</font></p>
+<p align="center">&nbsp; 
+<table border>
+<tr>
+<td width="200"><p align="left"><font face="Arial Rounded MT Bold"> 
+<p align="left"><font face="Arial Rounded MT Bold" size="2">
+3D Deconvolution Microscopy</p>
+<p align="left"><font face="Arial Rounded MT Bold"><a href="https://www.optarc.co.uk/deconvolve/index.html"  target="New">(Click Here)</a></font> 
+</td>
+<td><p>&nbsp;<a href="https://www.optarc.co.uk/deconvolve/index.html"  target="New"><img src="Images/DnBtn.png" border="0"></a></td>
+</tr>
+<tr>
+<td width="200" height="20"><p align="left"><font face="Arial Rounded MT Bold" size="2">
+2D Deconvolution of Gaussian blur</p>
+<p align="left"><a href="Research/BARAtest9.htm">(Click Here)</B></a></font><P>
+
+        <FORM name="speed">
+        <font size="2"><B>Animated Example</B><BR>
+        </font><font size="2">Select a speed to start ...<BR>
+    </B><font size="1">(Your browser must be set to allow JavaScript to see it. Left: Image, Right: Power spectrum)<B><BR>
+                <INPUT  TYPE="radio" name="tic" onClick="clockSpeed(100)"  >1/10 Second <BR> 
+                <INPUT  TYPE="radio" name="tic" onClick="clockSpeed(250)"  >1/4 Second <BR>
+                <INPUT  TYPE="radio" name="tic" onClick="clockSpeed(500)"  >1/2 Second <BR>
+                <INPUT  TYPE="radio" name="tic" onClick="clockSpeed(1000)" >1 Seconds <BR>
+                <INPUT  TYPE="radio" name="tic" onClick="clockSpeed(2000)" >2 Seconds <BR>
+    </B></FONT></FORM>
+</td>
+<td>
+    <SCRIPT language="javascript">
+    <!--
+    if (!bAnimate){
+        document.write(    "<FONT COLOR='white' SIZE='5'><BR>Your browser does not support JavaScript Animation!</FONT>");
+        }
+    else
+        {
+            ATImg = new Array(26)
+            ATImg[1] = new Image();
+            ATImg[1].src="Images/ATest/DCLVs_00.png";
+            ATImg[2] = new Image();
+            ATImg[2].src="Images/ATest/DCLVs_01.png";
+            ATImg[3] = new Image();
+            ATImg[3].src="Images/ATest/DCLVs_02.png";
+            ATImg[4] = new Image();
+            ATImg[4].src="Images/ATest/DCLVs_03.png";
+            ATImg[5] = new Image();
+            ATImg[5].src="Images/ATest/DCLVs_04.png";
+            ATImg[6] = new Image();
+            ATImg[6].src="Images/ATest/DCLVs_05.png";
+            ATImg[7] = new Image();
+            ATImg[7].src="Images/ATest/DCLVs_06.png";
+            ATImg[8] = new Image();
+            ATImg[8].src="Images/ATest/DCLVs_07.png";
+            ATImg[9] = new Image();
+            ATImg[9].src="Images/ATest/DCLVs_08.png";
+            ATImg[10] = new Image();
+            ATImg[10].src="Images/ATest/DCLVs_09.png";
+            ATImg[11] = new Image();
+            ATImg[11].src="Images/ATest/DCLVs_10.png";
+            ATImg[12] = new Image();
+            ATImg[12].src="Images/ATest/DCLVs_11.png";
+            ATImg[13] = new Image();
+            ATImg[13].src="Images/ATest/DCLVs_12.png";
+            ATImg[14] = new Image();
+            ATImg[14].src="Images/ATest/DCLVs_13.png";
+            ATImg[15] = new Image();
+            ATImg[15].src="Images/ATest/DCLVs_14.png";
+            ATImg[16] = new Image();
+            ATImg[16].src="Images/ATest/DCLVs_15.png";
+            ATImg[17] = new Image();
+            ATImg[17].src="Images/ATest/DCLVs_16.png";
+            ATImg[18] = new Image();
+            ATImg[18].src="Images/ATest/DCLVs_17.png";
+            ATImg[19] = new Image();
+            ATImg[19].src="Images/ATest/DCLVs_18.png";
+            ATImg[20] = new Image();
+            ATImg[20].src="Images/ATest/DCLVs_19.png";
+            ATImg[21] = new Image();
+            ATImg[21].src="Images/ATest/DCLVs_20.png";
+            ATImg[22] = new Image();
+            ATImg[22].src="Images/ATest/DCLVs_21.png";
+            ATImg[23] = new Image();
+            ATImg[23].src="Images/ATest/DCLVs_22.png";
+            ATImg[24] = new Image();
+            ATImg[24].src="Images/ATest/DCLVs_23.png";
+            ATImg[25] = new Image();
+            ATImg[25].src="Images/ATest/DCLVs_24.png";
+            ATImg[26] = new Image();
+            ATImg[26].src="Images/ATest/DCLVs_25.png";
+        }
+
+    var ii=1;        
+    var tempSpeed=null;
+    var timerID=null;
+
+    function clockSpeed(newSpeed)
+        {
+        if (bAnimate){
+            clearTimeout(timerID);    
+            tempSpeed=newSpeed;
+            upDate(tempSpeed);
+            }
+        }
+
+        function upDate()
+            {
+            if (ii<26) ii++; else ii=1;
+            document.t.src=ATImg[ii].src;
+            timerID=setTimeout("upDate()", tempSpeed);
+            }
+    //-->
+    </SCRIPT>
+
+
+<FONT FACE="ARIAL"><B>
+
+
+    <SCRIPT language="javascript">
+    <!--
+    if (!bAnimate)
+        document.write("<FONT COLOR='#ff0000'>Your browser doesn't support JavaScript animation!</FONT>");
+    //-->
+    </SCRIPT>
+
+<TABLE BORDER=0 CELLPADDING="5">
+<TR>
+    <TD VALIGN="top">
+         <IMG src="Images/ATest/Aorig.png" width="75" height="90" border="0">
+         <IMG src="Spacer.png" width="2" height="0" border="0">
+         <IMG src="Images/ATest/Aorigpow.png" width="75" height="90" border="0"><BR>
+         <IMG NAME=t SRC="Images/ATest/DCLVs_00.png" BORDER="0" WIDTH="160" HEIGHT="90">
+    </TD>
+</TR>
+</TABLE>
+
+
+</td>
+</tr>
+<tr>
+<td width="200"><p align="left"> 
+<p align="left"><font face="Arial Rounded MT Bold" size="2">
+Spatially variant PSF deconvolution</font><font size="2"> (correcting optical abberrations and variable defocus)</font></p>
+<p align="left"><font face="Arial Rounded MT Bold" size="2"><a href="Research/BAR_VariantPSF.htm">(Click Here)</a></font> 
+</td>
+<td><p><img src="Images/VarDC/CV_Rosetta3.png" border="0" size="2">&nbsp;<img src="Images/VarDC/DC_Rosetta3.png" border="0"></td>
+</tr>
+<tr>
+<td width="200"><p align="left"> 
+<p align="left"><font face="Arial Rounded MT Bold" size="2">
+Super-Resolution</font><font  size="2">&nbsp;(combining multiple low-resolution images to form one higher resolution image)</font></p>
+<p align="left"><font face="Arial Rounded MT Bold" size="2"><a href="Research/BAR_SuperRes.htm">(Click Here)</a></font> 
+</td>
+<td><p><img src="Images/SRAlias/Lib_OrigBig9.png" border="0"><BR><img src="Images/SRAlias/Lib_MixelDC.png" border="0"></td>
+</tr>
+<tr>
+<td width="200"><p align="left"> 
+<p align="left"><font face="Arial Rounded MT Bold" size="2">
+Blind deconvolution</font><font  size="2">&nbsp;(recovering both image and PSF from a blurred image)</font></p>
+<p align="left"><font face="Arial Rounded MT Bold" size="2"><a href="Research/BAR_IBD.htm">(Click Here)</a></font> 
+</td>
+<td width="404" height="62"><p><img src="Images/IBD/IB_Demo.png" border="0"></td>
+</tr><tr>
+<td width="200"><p align="left">
+<p align="left"><font face="Arial Rounded MT Bold" size="2">
+2D Deconvolution for Real (in-the-camera) Out-of-Focus Blur</font></p>
+<p align="left"><font face="Arial Rounded MT Bold" size="2"><a href="Research/BARclockblur.htm">(Click Here)</a></font> 
+</td>
+<td width="404" height="62"><p><img src="Images/ClockBlur/ClockBlur.jpg" height="200" width="200" border="0"> <img src="Images/ClockBlur/LWnoring_1024.jpg" height="200" width="200" border="0"></td>
+</tr>
+<tr>
+<td width="200" height="62"><p align="left"><font face="Arial Rounded MT Bold" size="2">
+Local Area and Adaptive Neighbourhood Histogram Equalisation</font></p>
+<p align="left">(with applications to forensic image enhancement)</p>
+<p align="left"><font face="Arial Rounded MT Bold" size="2"><a href="Research/BARHequalise.htm">(Click Here)</a></font> 
+</td>
+<td width="404" height="62"><img src="Images/RoomOrig.JPG" border="0" alt="RoomOrig.JPG"><img src="Images/RoomLAHE.JPG" border="0" alt="RoomLAHE.JPG"></td>
+</tr>
+<tr>
+<td width="200" height="62"><p align="left"><font face="Arial Rounded MT Bold" size="2">
+3D Models in VRML from Serial Section Images by Automated Image Registration and Advanced Alpha Mapping.</font>&nbsp;<font size="2">(Illustrated by serial sections of a bronchial carcinoid tumour)</p>
+<p align="left"><font face="Arial Rounded MT Bold" size="2"><a href="Research/BARcarcinoid.htm">(Click Here)</a></font> 
+</td>
+<td width="404" height="62"><p><img src="Images/CndStill.png" border="0" alt="CndStill.png"></td>
+</tr>
+<tr>
+<td width="200" height="62"><p align="left"><font face="Arial Rounded MT Bold" size="2">Wavelet-based de-speckling of OCT images. </font><font size="2">(OCT acquired with systems built at the Applied Optics laboratories of Prof. Adrian Gh. Podoleanu, University of Kent at Canterbury, UK)</p>
+<p align="left"><font face="Arial Rounded MT Bold" size="2"><a href="Research/BARoctwavelets.htm">(Click Here)</a></font> 
+</td>
+<td width="404" height="62"><p><img src="Images/WaveletOCT/wdsO1d.JPG" border="0" alt="wdsO1d.JPG"></td>
+</tr>
+</table>
+
+
+ </TD>
+ </TABLE>
+
+    <table>
+    <tr align="center">
+    <p align="center">&nbsp;Copyright <img src="./Images/c2.png" border="0" alt="Copyright"><font face="Arial Rounded MT Bold"> Dr P. J. Tadrous 2000-2026</font></p>
+    <p><font face="Arial" size="1" color="navy"><a href="./SiteMap.htm">Site Map</a></font></p>
+    </tr>
+    </table>
+
+
+</TABLE>
+</body>
+</html>

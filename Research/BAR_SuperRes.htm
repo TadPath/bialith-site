@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<link rel="icon" href="./favicon.png" type="image/png" />
+<link rel="shortcut icon" href="./favicon.png" type="image/png" />
+<title>Digital Image Processing</title>
+<meta name="description" content="Bialith scientific image processing, restoration and analysis software is free software. Deconvolution, measurement, 3D volumetric visualsation, automated registration, enhancement and batch processing are just some of the features. Applications: medicine, forensic imaging, histology, astronomy, physics, etc.">
+<meta name="keywords" content="Image, Processing, Deconvolution, Analysis, Software, Registration, Enhancement, FITS">
+<link rel="icon" href="./favicon.png" /> 
+<link rel="shortcut icon" href="./favicon.png" /> 
+</head>
+
+<body background="../Images/BAbg.JPG" bgcolor="silver" text="black" link="blue" vlink="purple" alink="red">
+
+<TABLE WIDTH="640" BORDER="0" CELLPADDING="4" CELLSPACING="0">
+
+ <TD ALIGN="left" VALIGN="TOP"><LEFT>
+  <IMG SRC="../Images/Ocean.png" BORDER=0 ALT="BiAlith"><BR>
+  <FONT FACE="Times New Roman" SIZE="4" COLOR="#C0C0FF"><B>BiAlith</B></FONT><P>
+  <FONT FACE="Arial" SIZE="2" COLOR="#000000">
+   <A HREF="../index.html"><img src="../Images/BAHome.png" border="0" ALT="Home"></a><BR>
+   <A HREF="../BADownloads.htm"><img src="../Images/BASoftware.png" border="0" ALT="Software"></a><BR>
+   <A HREF="../BAResearch.htm"><img src="../Images/BAResearch.png" border="0" ALT="Research"></a><BR>
+   <A HREF="../BALinks.htm"><img src="../Images/BALinks.png" border="0" ALT="Links"></a><BR><BR>
+   <A HREF="../BADisclaimer.htm"><img src="../Images/BADisclaimer.png" border="0" ALT="Disclaimer"></a><BR>
+   <A HREF="../BAAboutus.htm"><img src="../Images/BAAbout.png" border="0" ALT="About Us"></a><BR>
+  </B></FONT>
+ </TD>
+ <TD ALIGN="center" VALIGN="TOP">
+
+
+
+<table>
+<tr>
+<td width="600" height="100">
+<p align="center"><font face="Arial Rounded MT Bold" size="4">Super-Resolution from Multiple Input Images (De-Aliasing)</font></p>
+<p align="left"><font size="2">It is possible to use multiple low resolution images of the same object to generate one single high resolution image of that object. This is especially useful in forensic image analysis where you have multiple still frames of video of a suspect or car licence plate (e.g. from CCTV) and you need to see more detail.<BR>
+This type of super-resolution can only be achieved if 2 preconditions are met, namely:<BR>
+1. Each of the low resolution images has some kind of motion relative to all the others. 'Motion' includes, shift, scale, rotation and focus differences. If all the images are exactly the same apart from noise content then all you will get it a less noisy image with no added resolution information.<BR>
+2. The low resolution input images must be captured using optics which project a higher resolution image onto the sensor. In other words, you can't use this method to beat the 'limit of resolution' of the camera lens - it's only good for de-aliasing.<BR>
+In general, the more input images you have and the greater the 'motion' they portray, the more resolution recovery can be theoretically extracted from them. The method starts simple but can get very complex. In essence you first register all the low resolution images to sub-pixel accuracy (the more accurate your registration, the more of the available super-resolution you can reclaim). The pixels of the input image are then projected onto a finer grid using these registration parameters to form an initial super-resolved image. This is what the NASA group call a 'Mixel grid' (Cheeseman P., Kanefsky B., Kraft R. and Stutz J. NASA Ames Research Center Internal Technical Report FIA-94-12, December 14 1994). This initial estimate is actually a blurred version of the fully super-resolved image so there must follow an un-blurring step (which I do with deconvolution but others use other methods).<BR>
+Two experiments are shown below. They use the Biaram programs Autoreg, Alignlist, Geomlist, Deconvolve, Genav, MkPlain, ZStdise, Ewin, Border, Scale, SRMixel and SRDecon. The first uses, as input, 32 scanned images of a UK postage stamp. The input images were scanned at 75 dpi and the super-resolved result attempts to reconstruct a 300dpi image. The second example uses 30 low resolution images of a library. 
+</font></p>
+<p align="left"><font face="Arial Rounded MT Bold" size="1">28.02.2008</font> 
+<table border>
+<tr>
+<td ><font size="2"><b>Stamp (ground truth)</b>: a 300 dpi original scan. Compare this to the super-resolved reconstruction shown below. (A ground truth image for the 'Car/Library' dataset is not available.)</td>
+</tr><tr>
+<td><font size="2">a) <img src="../Images/SRAlias/Stamp_300dpi.png" border="0"></td>
+</tr><tr>
+<td><font size="2">Stamp (results 1)</b>: Four of the 32 input images are shown on the left, the super-resolved result is shown on the right.</td>
+</tr><tr>
+<td><font size="2"><img src="../Images/SRAlias/Stamp_Input.png" border="0"><img src="../Images/SRAlias/Stamp_MixelDC.png" border="0"></td>
+</tr><tr>
+<td><font size="2"><b>Stamp (results 2)</b>: Compare the blown up-version of one of the input images (left) with the super-resolved image (right). There is significant resolution recovery. However, the resolution is not quite upto the 300dpi attempted. This is partly because the method I used here is an approximation to the optimum procedure with spatially invariant PSF deconvolution.</td>
+</tr><tr>
+<td><font size="2"><img src="../Images/SRAlias/Stamp_OrigBig.png" border="0"><img src="../Images/SRAlias/Stamp_MixelDC.png" border="0"></td>
+</tr><tr>
+<td><font size="2"><b>Library (results)</b>: One of the 30 input images is shown (magnified) on the left, the super-resolved result is shown on the right. In this method I use a more accurate version of my algorithm with spatially variant PSF deconvolution. Note the detailed brick-work.</td>
+</tr><tr>
+<td><font size="2"><img src="../Images/SRAlias/Lib_OrigBig9.png" border="0"><img src="../Images/SRAlias/Lib_MixelDC.png" border="0"><BR>
+The input images used for this experiment are from the 'Car/Library' dataset of Barbara Levienaise-Obadia, Dept. Electrical and Electronic Engineering, University of Surrey, UK. They can be downloaded for you to try and compare your own methods of super-resolution de-aliasing. I downloaded them from the <a href="http://www.robots.ox.ac.uk/~vgg/research/SR/index.html" target="New">Oxford University Visual Geometry Group</a>'s web site. If you want to compare my result to theirs, see <a href="http://www.robots.ox.ac.uk/~vgg/presentations/bmvc06_superres.ppt" target="New">this PowerPoint presentation</a>.</td>
+</tr></table>
+</td>
+</tr></table>
+
+ </TD>
+ </TABLE>
+
+    <table>
+    <tr align="center">
+    <p align="center">&nbsp;Copyright <img src="../Images/c2.png" border="0" alt="Copyright"><font face="Arial Rounded MT Bold"> Dr P. J. Tadrous 2000-2026</font></p>
+    <p><font face="Arial" size="1" color="navy"><a href="../SiteMap.htm">Site Map</a></font></p>
+    </tr>
+    </table>
+
+
+</TABLE>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<link rel="icon" href="./favicon.png" type="image/png" />
+<link rel="shortcut icon" href="./favicon.png" type="image/png" />
+<title>Digital Image Processing</title>
+<meta name="description" content="Bialith scientific image processing, restoration and analysis software is free software. Deconvolution, measurement, 3D volumetric visualsation, automated registration, enhancement and batch processing are just some of the features. Applications: medicine, forensic imaging, histology, astronomy, physics, etc.">
+<meta name="keywords" content="Image, Processing, Deconvolution, Analysis, Software, Registration, Enhancement, FITS">
+<link rel="icon" href="./favicon.png" /> 
+<link rel="shortcut icon" href="./favicon.png" /> 
+</head>
+
+<body background="../Images/BAbg.JPG" bgcolor="silver" text="black" link="blue" vlink="purple" alink="red">
+
+<TABLE WIDTH="640" BORDER="0" CELLPADDING="4" CELLSPACING="0">
+
+ <TD ALIGN="left" VALIGN="TOP"><LEFT>
+  <IMG SRC="../Images/Ocean.png" BORDER=0 ALT="BiAlith"><BR>
+  <FONT FACE="Times New Roman" SIZE="4" COLOR="#C0C0FF"><B>BiAlith</B></FONT><P>
+  <FONT FACE="Arial" SIZE="2" COLOR="#000000">
+   <A HREF="../index.html"><img src="../Images/BAHome.png" border="0" ALT="Home"></a><BR>
+   <A HREF="../BADownloads.htm"><img src="../Images/BASoftware.png" border="0" ALT="Software"></a><BR>
+   <A HREF="../BAResearch.htm"><img src="../Images/BAResearch.png" border="0" ALT="Research"></a><BR>
+   <A HREF="../BALinks.htm"><img src="../Images/BALinks.png" border="0" ALT="Links"></a><BR><BR>
+   <A HREF="../BADisclaimer.htm"><img src="../Images/BADisclaimer.png" border="0" ALT="Disclaimer"></a><BR>
+   <A HREF="../BAAboutus.htm"><img src="../Images/BAAbout.png" border="0" ALT="About Us"></a><BR>
+  </B></FONT>
+ </TD>
+ <TD ALIGN="center" VALIGN="TOP">
+
+
+
+<table>
+<tr>
+<td width="600" height="100">
+<a href="https://www.optarc.co.uk/deconvolve/index.html"  target="New"><img src="../Images/DnBtn.png" border="0"><font size="2"> For the latest deconvolution results, click here.</font></a>
+<p align="center"><font face="Arial Rounded MT Bold" size="4">Comparison of Biaram 2-D Deconvolution Methods for Correction of Gaussian Blur</font></p>
+<p align="left"><font size="2">Unlike out-of-focus blur, Gaussian blur does not have strong high frequency components in the PSF so it is more difficult to recover high frequency detail by deconvolution. These experiments use a tiny input image (36x30 pixels) blurred in the computer by a 9x9 pixel Gaussian PSF. No noise was added. The object of these tests is not to demonstrate the effectiveness of the algorithms on real-world data (for that see the <a href="BARclockblur.htm">clock blur</a> example). Rather it allows many iterations to be performed to assess the restoration capabilities of the various methods when taken to the limit.<BR>All results are shown for 16777216 iterations (it takes about 3 days to run two such deconvolutions simultaneously on a hyperthreaded 3.06GHz Pentium 4 PC). The results of two novel algorithms I am developing are also shown (these are not yet released in the public distribution). After the pictorial results are presented, a comparative graph is shown giving quantitative results in the form of residual statistics (explained below). Although no noise is added there is the inevitable quantisation error which  becomes significant with Gaussian blur recovery and is a challenge to any method.</font></p>
+</font></p>
+<font face="Arial Rounded MT Bold" size="1">16.03.2008</font> 
+<table border>
+<tr>
+<td width="76" height="128"><img src="../Images/ATest/Aorig.png" align="top" width="75" height="90" border="0">
+<p><img src="../Images/ATest/Aorigpow.png" align="top" width="75" height="90" border="0"></p></td>
+<td width="512" height="128"><font size="3"><b>The original test card image and its Power spectrum</b></font>
+<p><font size="2">This synthetic image has a smooth sinusoidally varying background with high frequency freatures in the foreground. Note especially the dark and light isolated pixels and the narrow gap between the top right of the 'A' and the highlight streak. These are particularly difficult features to recover after a Gaussian-type blur</p></font></td>
+<td width="76" height="128"><p><img src="../Images/ATest/Ablur9.png" width="75" height="90" border="0">
+<p><img src="../Images/ATest/Ablur9pow.png" width="75" height="90" border="0"></p></td>
+<td width="512" height="128"><font size="3"><b>The blurred testcard and its power spectrum</b></font>
+<p><font size="2">This image forms the input to the algorithms. It is the testcard blurred by a 9x9 pixel Gaussian. The image boundaries were treated by mirror reflection geometry.<B> Download</B> the double preceision FITS images and Van Cittert settings file below if you want to attempt to reproduce these results <I>(these images are copyright of Dr P. J. Tadrous and may not be published without his written permission)</I>:<BR>
+<a href="TABlur9.zip"><img src="../Images/DownB.png" border="0" alt="Click to download blurred image"><b><i> Blurred image</i></b></a>.<BR>
+<a href="Gauss9.zip"><img src="../Images/DownB.png" border="0" alt="Click to download the PSF"><b><i> PSF</i></b></a>.<BR>
+<a href="DCS_VC.zip"><img src="../Images/DownB.png" border="0" alt="Click to download the settings file"><b><i> Settings file</i></b></a>.<BR></p></font></td>
+</tr>
+</table>
+
+<table border>
+<tr>
+<td width="76" height="128" align="center">
+<B>Truth</B>
+<p><img src="../Images/ATest/Aorig.png" align="top" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Aorigpow.png" align="top" width="75" height="90" border="0"></p></td>
+<td width="76" height="128" align="center">
+<B><font face="arial narrow">Deconvolved</font></B>
+<p><img src="../Images/ATest/Alv.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Alvpow.png" width="75" height="90" border="0"></p></td>
+<td width="76" height="128" align="center">
+<B>Input</B>
+<p><img src="../Images/ATest/Ablur9.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Ablur9pow.png" width="75" height="90" border="0"></p></td>
+<td width="1024" height="128"><font size="3"><b>New Method 1</b></font>
+<p><font size="2">This new method is non-linear. It searches for an optimal solution in terms of <I>local</I> goodness of fit. It gives the best results of all the methods shown with good recovery of high spatial frequencies. The full properties of this new method are not yet known. You can see an amination of this method on the <a href="../BAResearch.htm">research index page</a> of this website (JavaScript must be enabled). This shows the results of successive interation intervals going up in powers of 2 from 0 to 16.7 million.</font>
+</td>
+</tr>
+<tr><td height="21" colspan="4"><p>&nbsp;</td></tr>
+<tr>
+<td height="76" height="128" align="center"><p><img src="../Images/ATest/Aorig.png" align="top" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Aorigpow.png" align="top" width="75" height="90" border="0"></td>
+<td width="76" height="128" align="center"><p><img src="../Images/ATest/Avc.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Avcpow.png" width="75" height="90" border="0"></td>
+<td width="76" height="128" align="center"><p><img src="../Images/ATest/Ablur9.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Ablur9pow.png" width="75" height="90" border="0"></td>
+<td width="1024" height="128"><p><b>Van Cittert</b></p>
+<p>This gives the best results of all the conventional methods (better than maximum entropy and Lucy-Richardson, etc). Compare this situation to the <a href="BARclockblur.htm">clock blur</a> page where Van Cittert is not useful. This emphasises that the algorithm should be taylored to the application and that no one algorithm should be seen as a 'cure-all'.</p>
+<p>&nbsp;</td></tr>
+<tr><td height="20" colspan="4"><p>&nbsp;</td></tr>
+<tr>
+<td height="76" height="128" align="center"><p><img src="../Images/ATest/Aorig.png" align="top" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Aorigpow.png" align="top" width="75" height="90" border="0"></td>
+<td width="76" height="128" align="center"><p><img src="../Images/ATest/Ard.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Ardpow.png" width="75" height="90" border="0"></td>
+<td width="76" height="128" align="center"><p><img src="../Images/ATest/Ablur9.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Ablur9pow.png" width="75" height="90" border="0"></td>
+<td width="1024" height="128"><p><b>New Method 2</b></p>
+<p>This is the second of my novel algorithms which works using a geometrical transformation model and is applicable in hardware as a parrallel process so is potentially a real-time deconvolution algorithm. It gives similar results to maximum entropy methods.</p>
+<p>&nbsp;</td></tr>
+<tr><td height="20" colspan="4"><p>&nbsp;</td></tr>
+<tr>
+<td height="76" height="128" align="center"><p><img src="../Images/ATest/Aorig.png" align="top" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Aorigpow.png" align="top" width="75" height="90" border="0"></td>
+<td width="76" height="128" align="center"><p><img src="../Images/ATest/Agd.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Agdpow.png" width="75" height="90" border="0"></td>
+<td width="76" height="128" align="center"><p><img src="../Images/ATest/Ablur9.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Ablur9pow.png" width="75" height="90" border="0"></td>
+<td width="1024" height="128"><p><b>Maximum Entropy<BR>(Gull and Daniel)</b></p>
+<p>The results show moderate recovery of detail with lack of high frequency restoration as illustrated in the power spectrum. Gamma = 0.0123.</td></tr>
+<tr><td height="17" colspan="4"><p>&nbsp;</td></tr>
+<tr>
+<td height="76" height="128" align="center"><p><img src="../Images/ATest/Aorig.png" align="top" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Aorigpow.png" align="top" width="75" height="90" border="0"></td>
+<td width="76" height="128" align="center"><p><img src="../Images/ATest/Amr.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Amrpow.png" width="75" height="90" border="0"></td>
+<td width="76" height="128" align="center"><p><img src="../Images/ATest/Ablur9.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Ablur9pow.png" width="75" height="90" border="0"></td>
+<td width="1024" height="128"><p><b>Maximum Entropy<BR>(Myrheim and Rue)</b></p>
+<p>The results show a moderate restoration with lack of fine detail. The power spectrum shows only partial recovery of higher spatial frequencies (not quite as good as the Gull and Daniell method).<BR>The algorithm used an estimated noise variance of 5.0e-6.</td>
+</tr>
+<tr><td height="16" colspan="4"><p>&nbsp;</td></tr>
+<tr>
+<td height="76" height="128" align="center"><p><img src="../Images/ATest/Aorig.png" align="top" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Aorigpow.png" align="top" width="75" height="90" border="0"></td>
+<td width="76" height="128" align="center"><p><img src="../Images/ATest/Alr.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Alrpow.png" width="75" height="90" border="0"></td>
+<td width="76" height="128" align="center"><p><img src="../Images/ATest/Ablur9.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Ablur9pow.png" width="75" height="90" border="0"></td>
+<td width="1024" height="128"><p><b>Lucy-Richardson</b></p>
+<p>This gives a comparable result to Gull and Daniell maximum entropy (a slightly better restoration than the Myrheim & Rue algorithm).</td>
+</tr>
+<tr><td height="16" colspan="4"><p>&nbsp;</td></tr>
+<tr>
+<td height="76" height="128" align="center"><p><img src="../Images/ATest/Aorig.png" align="top" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Aorigpow.png" align="top" width="75" height="90" border="0"></td>
+<td width="76" height="128" align="center"><p><img src="../Images/ATest/Asr.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Asrpow.png" width="75" height="90" border="0"></td>
+<td width="76" height="128" align="center"><p><img src="../Images/ATest/Ablur9.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Ablur9pow.png" width="75" height="90" border="0"></td>
+<td width="1024" height="128"><p><b>Super-Resolution</b></p>
+<p>This gives results that are similar to Lucy-Richardson.</td>
+</tr>
+<tr><td height="17" colspan="4"><p>&nbsp;</td></tr>
+<tr>
+<td height="76" height="128" align="center"><p><img src="../Images/ATest/Aorig.png" align="top" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Aorigpow.png" align="top" width="75" height="90" border="0"></td>
+<td width="76" height="128" align="center"><p><img src="../Images/ATest/Alw.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Alwpow.png" width="75" height="90" border="0"></td>
+<td width="76" height="128" align="center"><p><img src="../Images/ATest/Ablur9.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Ablur9pow.png" width="75" height="90" border="0"></td>
+<td width="1024" height="128"><p><b>Landweber</b></p>
+<p>I have found Landweber to be a robust method giving good results in most circumstances. Although not the best method in this test, the results are stable and respectable and, as discussed below, the result was still converging even at the 16.7 millionth iterate.</td>
+</tr>
+<tr><td height="18" colspan="4"><p>&nbsp;</td></tr>
+<tr>
+<td height="76" height="128" align="center"><p><img src="../Images/ATest/Aorig.png" align="top" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Aorigpow.png" align="top" width="75" height="90" border="0"></td>
+<td width="76" height="128" align="center"><p><img src="../Images/ATest/Als.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Alspow.png" width="75" height="90" border="0"></td>
+<td width="76" height="128" align="center"><p><img src="../Images/ATest/Ablur9.png" width="75" height="90" border="0"></p>
+<p><img src="../Images/ATest/Ablur9pow.png" width="75" height="90" border="0"></td>
+<td width="1024" height="128"><p><b>Least Squares</b></p>
+<p>Gamma = 1e-06. Antireflective boundary treatment was required to prevent excessive boundary artefacts. This is a one-step non-iterative mothod so is very quick (this result only took a matter of seconds).</td>
+</tr>
+</table><p>
+<table>
+<tr><td width="1024"><p><b>Quantitative Results</b>
+</td></tr>
+<tr>
+<td height="76" height="128"><p><img src="../Images/ATest/AResid.png" align="top" width="664" height="512" border="0">
+</td></tr>
+<tr><td>
+These are log-log scale plots of 'Residual' (on the ordinate) <I>vs</I>. 'Iteration' (abscissa) for each of the iterative methods: <B>VC</B> = van Cittert, <B>LW</B> = Landweber, <B>LR</B> = Lucy-Richardson, <B>SR</B> = Super-Resolution, <B>GD</B> = Gull & Daniell, <B>MR</B> = Myrheim & Rue, <B>RD</B> = New method 2, <B>LV</B> = New method 1.<BR>
+The <B>Residual</B> is calculated by convolving the estimate of the solution (at the current iteration) with the PSF, then calculating the integral of the absolute difference between this image and the input image. a 5 pixel rim all around the image is ignored in this integration so as not to bias the result due to the various boundary artefacts that my occurr with any of the methods. If the restoration is perfect then this residual should be zero. The closer to zero it is the better the estimate (the deconvolution results are all constrained to be non-negative).<BR>
+These cueves indicate that the 'New Method 1' (i.e. <B>LV</B>) gives the best final restoration of all the methods (lowest residual). The convergence rate, in terms of improvement per iteration, is variable (perhaps to be expected of a non-linear method). This rate is also comparable to the VC method which is better than all the other methods. However, this new method (LV) surprisingly diverges from the VC rate as iterations progress to give an even faster rate of convergence with increasing iterations compared to VC. As the method generally restores the lower frequencies first with further iterations refining the high freqency detail (see the animation on the <a href="../BAResearch.htm">research index page</a>), this indicates that it gives a 'faster' rate of improvement of high frequency detail than all the other methods tested. It should be appreciated that this 'speed' is in terms of improvement per iteration not actual speed of calculation as this method actually takes about twice as long to calculate each iteration compared to a typical Van Cittert iteration (i.e. there are more calculations per iteration).<BR>
+Van Cittert appears to give the next best restoration in terms of convergence and final restoration residual.<BR>
+While the MR method of maximum entropy gives steeper convergence than all but the LV method early on, the solution quickly converges to the 'best achievable' for this algorithm and then oscillates about this point without improvement despite further iterations. My understanding is that this 'best' estimate is limited partly by the estimate of the noise variance and a lower noise variance estimate should result in a more detailed final restoration but I was unable to run the algorithm with a lower noise estimate that that used here without running into numerical exception errors. This may be a problem with my implementation rather than the algorithm itself.<BR>
+The other methods (LW, LR, SR, RD, GD) are very similar to each other in terms of rate of convergence and quality of the final estimate.<BR>
+With the sole exception of the MR method, all the other solutions appear to be continuing to improve with increasing iterations at the time the experiment was stopped. This suggests that further iterations may result in further improvement in the solution. However, as this is a log-log graph, the improvement is asymptotic so it is impractical to obtain significant improvement.
+</td>
+</tr>
+</table>
+
+ </TD>
+ </TABLE>
+
+    <table>
+    <tr align="center">
+    <p align="center">&nbsp;Copyright <img src="../Images/c2.png" border="0" alt="Copyright"><font face="Arial Rounded MT Bold"> Dr P. J. Tadrous 2000-2026</font></p>
+    <p><font face="Arial" size="1" color="navy"><a href="../SiteMap.htm">Site Map</a></font></p>
+    </tr>
+    </table>
+
+
+</TABLE>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>BiAlith Image Processing Results</title>
+<link rel="icon" href="./favicon.png" type="image/png" />
+<link rel="shortcut icon" href="./favicon.png" type="image/png" />
+<title>Digital Image Processing</title>
+<meta name="description" content="Bialith scientific image processing, restoration and analysis software is free software. Deconvolution, measurement, 3D volumetric visualsation, automated registration, enhancement and batch processing are just some of the features. Applications: medicine, forensic imaging, histology, astronomy, physics, etc.">
+<meta name="keywords" content="Image, Processing, Deconvolution, Analysis, Software, Registration, Enhancement, FITS">
+<link rel="icon" href="./favicon.png" /> 
+<link rel="shortcut icon" href="./favicon.png" /> 
+
+<SCRIPT language="javascript">
+    <!--
+
+    // This code is derived from: The Michael Schrenk JavaScript 
+    // Animation Tutorial at http://www.schrenk.com/js/index.html
+
+    var bAnimate = true;
+
+    //-->
+    </SCRIPT>
+
+</head>
+
+<body background="../Images/BAbg.JPG" bgcolor="silver" text="black" link="blue" vlink="purple" alink="red">
+
+<TABLE WIDTH="640" BORDER="0" CELLPADDING="4" CELLSPACING="0">
+
+ <TD ALIGN="left" VALIGN="TOP"><LEFT>
+  <IMG SRC="../Images/Ocean.png" BORDER=0 ALT="BiAlith"><BR>
+  <FONT FACE="Times New Roman" SIZE="4" COLOR="#C0C0FF"><B>BiAlith</B></FONT><P>
+  <FONT FACE="Arial" SIZE="2" COLOR="#000000">
+   <A HREF="../index.html"><img src="../Images/BAHome.png" border="0" ALT="Home"></a><BR>
+   <A HREF="../BADownloads.htm"><img src="../Images/BASoftware.png" border="0" ALT="Software"></a><BR>
+   <A HREF="../BAResearch.htm"><img src="../Images/BAResearch.png" border="0" ALT="Research"></a><BR>
+   <A HREF="../BALinks.htm"><img src="../Images/BALinks.png" border="0" ALT="Links"></a><BR><BR>
+   <A HREF="../BADisclaimer.htm"><img src="../Images/BADisclaimer.png" border="0" ALT="Disclaimer"></a><BR>
+   <A HREF="../BAAboutus.htm"><img src="../Images/BAAbout.png" border="0" ALT="About Us"></a><BR>
+  </B></FONT>
+ </TD>
+ <TD ALIGN="center" VALIGN="TOP">
+
+<table>
+<tr>
+<td width="600" height="100">
+<p align="center"><font face="Arial Rounded MT Bold" size="4">Using FATCAM and Autoreg to Make 3D VRML Models from Serial Sections</font></p>
+<p align="left"><font size="2">FATCAM is a GUI Windows program I wrote as part of my Ph.D. into advanced tissue imaging at Imperial College. It stands for <B>F</B>lexible <B>A</B>ssignment of <B>T</B>ransparency and <B>C</B>olour-based <B>A</B>lpha <B>M</B>apping.
+<BR>You can download it from the <a href="../BADownloads.htm">Downloads page</a> on this site.
+<BR>You might ask 'isn't this yet another 3D modelling from serial sections program?' Yes and No. Yes, in the sense that anything you can do with other 3D modelling methods you can do using these programs. No, in the sense that by means of the highly flexible transparency mapping allowed by FATCAM, one can make 3D models of information-intense objects such as bright-field microscopy. Most commercial solutions focus on fluorescence data as this is essentially simple - different intensities of one, two or three fluorophores in a black background. However, bright field imagery contains a wealth of visual detail and colour which overwhelms the visualisation abilities of other modelling software.<BR>I use VRML as the output medium as this is a good interactive interface for 3D visualisation on home computers making the most of your computer's graphics card abilities and therefore less dependent on the main processor specifications. Also VRML is FREE. Download the Cosmo Player VRML plug-in from <a href="http://ovrt.nist.gov/cosmo/" target="New">http://ovrt.nist.gov/cosmo/</a>. Once such a plug-in is installed you will be able to manipulate VRML models. As an example, download a (very low resolution) test model to try out by <a href="Cnd.zip">clicking here</a>.<BR>
+<table border>
+<tr>
+<td width="339"><p><b><img src="../Images/Carcinoid.JPG" border="0" alt="Carcinoid.JPG"></b><BR>
+<b<font size="2">One slice from the set of 168 serial sections used to make the model</b>.
+</td>
+<td>
+        <font size="2"><B>Animated Example</B><BR>
+
+    <SCRIPT language="javascript">
+    <!--
+    if (!bAnimate){
+        document.write(    "<FONT COLOR='white' SIZE='5'><BR>Your browser does not support JavaScript Animation!</FONT>");
+        }
+    else
+        {
+            CNImg = new Array(26)
+            CNImg[1] = new Image();
+            CNImg[1].src="../Images/Cnd1/Cnd1_frame_0001.jpg";
+            CNImg[2] = new Image();
+            CNImg[2].src="../Images/Cnd1/Cnd1_frame_0002.jpg";
+            CNImg[3] = new Image();
+            CNImg[3].src="../Images/Cnd1/Cnd1_frame_0003.jpg";
+            CNImg[4] = new Image();
+            CNImg[4].src="../Images/Cnd1/Cnd1_frame_0004.jpg";
+            CNImg[5] = new Image();
+            CNImg[5].src="../Images/Cnd1/Cnd1_frame_0005.jpg";
+            CNImg[6] = new Image();
+            CNImg[6].src="../Images/Cnd1/Cnd1_frame_0006.jpg";
+            CNImg[7] = new Image();
+            CNImg[7].src="../Images/Cnd1/Cnd1_frame_0007.jpg";
+            CNImg[8] = new Image();
+            CNImg[8].src="../Images/Cnd1/Cnd1_frame_0008.jpg";
+            CNImg[9] = new Image();
+            CNImg[9].src="../Images/Cnd1/Cnd1_frame_0009.jpg";
+            CNImg[10] = new Image();
+            CNImg[10].src="../Images/Cnd1/Cnd1_frame_0010.jpg";
+            CNImg[11] = new Image();
+            CNImg[11].src="../Images/Cnd1/Cnd1_frame_0011.jpg";
+            CNImg[12] = new Image();
+            CNImg[12].src="../Images/Cnd1/Cnd1_frame_0012.jpg";
+            CNImg[13] = new Image();
+            CNImg[13].src="../Images/Cnd1/Cnd1_frame_0013.jpg";
+            CNImg[14] = new Image();
+            CNImg[14].src="../Images/Cnd1/Cnd1_frame_0013.jpg";
+            CNImg[15] = new Image();
+            CNImg[15].src="../Images/Cnd1/Cnd1_frame_0012.jpg";
+            CNImg[16] = new Image();
+            CNImg[16].src="../Images/Cnd1/Cnd1_frame_0011.jpg";
+            CNImg[17] = new Image();
+            CNImg[17].src="../Images/Cnd1/Cnd1_frame_0010.jpg";
+            CNImg[18] = new Image();
+            CNImg[18].src="../Images/Cnd1/Cnd1_frame_0009.jpg";
+            CNImg[19] = new Image();
+            CNImg[19].src="../Images/Cnd1/Cnd1_frame_0008.jpg";
+            CNImg[20] = new Image();
+            CNImg[20].src="../Images/Cnd1/Cnd1_frame_0007.jpg";
+            CNImg[21] = new Image();
+            CNImg[21].src="../Images/Cnd1/Cnd1_frame_0006.jpg";
+            CNImg[22] = new Image();
+            CNImg[22].src="../Images/Cnd1/Cnd1_frame_0005.jpg";
+            CNImg[23] = new Image();
+            CNImg[23].src="../Images/Cnd1/Cnd1_frame_0004.jpg";
+            CNImg[24] = new Image();
+            CNImg[24].src="../Images/Cnd1/Cnd1_frame_0003.jpg";
+            CNImg[25] = new Image();
+            CNImg[25].src="../Images/Cnd1/Cnd1_frame_0002.jpg";
+            CNImg[26] = new Image();
+            CNImg[26].src="../Images/Cnd1/Cnd1_frame_0001.jpg";
+        }
+
+    var ii=1;        
+    var tempSpeed=null;
+    var timerID=null;
+
+    function clockSpeed(newSpeed)
+        {
+        if (bAnimate){
+            clearTimeout(timerID);    
+            tempSpeed=newSpeed;
+            upDate(tempSpeed);
+            }
+        }
+
+        function upDate()
+            {
+            if (ii<26) ii++; else ii=1;
+            document.t.src=CNImg[ii].src;
+            timerID=setTimeout("upDate()", tempSpeed);
+            }
+    //-->
+    </SCRIPT>
+
+
+<FONT FACE="ARIAL"><B>
+
+
+    <SCRIPT language="javascript">
+    <!--
+    if (!bAnimate)
+        document.write("<FONT COLOR='#ff0000'>Your browser doesn't support JavaScript animation!</FONT>");
+    //-->
+    </SCRIPT>
+
+<TABLE BORDER=0 CELLPADDING="5">
+<TR>
+    <TD VALIGN="top">
+         <IMG NAME=t SRC="../Images/Cnd1/Cnd1_frame_0001.jpg" BORDER="0" width="200" height="174" alt="Select a speed below to start this animation (uses Java script)">
+    </TD>
+</TR>
+</TABLE>
+        <FORM name="speed">
+        </font><font size="2">Select a speed to start ...<BR>
+    </B><font size="1">(Your browser must be set to allow JavaScript to see it.<B><BR>
+                <INPUT  TYPE="radio" name="tic" onClick="clockSpeed(100)"  >1/10 Second <BR> 
+                <INPUT  TYPE="radio" name="tic" onClick="clockSpeed(250)"  >1/4 Second <BR>
+                <INPUT  TYPE="radio" name="tic" onClick="clockSpeed(500)"  >1/2 Second <BR>
+                <INPUT  TYPE="radio" name="tic" onClick="clockSpeed(1000)" >1 Seconds <BR>
+                <INPUT  TYPE="radio" name="tic" onClick="clockSpeed(2000)" >2 Seconds <BR>
+    </B></FONT></FORM>
+
+
+
+</td>
+</tr>
+</table>
+<p align="left"><font size="2">The results of applying Autoreg and FATCAM to serial sections of a bronchial carcinoid tumour are shown above. The examples below are low resolution for ease of Internet downloading. Models can be made to any desired resolution (limited only by the local computer capacity and graphics card ability). Unlike other VRML models, FATCAM was designed to give the model true internal structure rather than just being a hollow shell and so FATCAM-generated models are suitable for true volumetric visualisation.</font> 
+All images were scanned in on a high resolution transparency scanner and so do not have cellular resolution (although this could have been achieved by using a microscope and digital camera).<BR>Once registered with Autoreg, FATCAM and BiaQIm were used together to 
+effect a transparency mapping based on natural colour content.<BR>FATCAM then converts the bmp files into PNG format with full alpha support and weaves a 3-dimensional lattice of planes into a VRML model. A low resolution image of this model is shown above. The VRML model allows full user interactive control of the model in 3D.<BR>Although VRML was designed for sharing models over the Internet, FATCAM-generated VRML files can be very large for high resolution volumetric datasets. It is intended that such models should be viewed on the local computer on which they are stored rather than over a network. In this way, VRML (plus a good 
+graphics card) allows you to use an ordinary PC as a graphics workstation.
+</td>
+</tr></table>
+
+ </TD>
+ </TABLE>
+
+    <table>
+    <tr align="center">
+    <p align="center">&nbsp;Copyright <img src="../Images/c2.png" border="0" alt="Copyright"><font face="Arial Rounded MT Bold"> Dr P. J. Tadrous 2000-2026</font></p>
+    <p><font face="Arial" size="1" color="navy"><a href="../SiteMap.htm">Site Map</a></font></p>
+    </tr>
+    </table>
+
+
+</TABLE>
+</body>
+</html>

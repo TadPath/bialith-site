@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<link rel="icon" href="./favicon.png" type="image/png" />
+<link rel="shortcut icon" href="./favicon.png" type="image/png" />
+<title>Digital Image Processing</title>
+<meta name="description" content="Bialith scientific image processing, restoration and analysis software is free software. Deconvolution, measurement, 3D volumetric visualsation, automated registration, enhancement and batch processing are just some of the features. Applications: medicine, forensic imaging, histology, astronomy, physics, etc.">
+<meta name="keywords" content="Image, Processing, Deconvolution, Analysis, Software, Registration, Enhancement, FITS">
+<link rel="icon" href="./favicon.png" /> 
+<link rel="shortcut icon" href="./favicon.png" /> 
+</head>
+
+<body background="../Images/BAbg.JPG" bgcolor="silver" text="black" link="blue" vlink="purple" alink="red">
+
+<TABLE WIDTH="640" BORDER="0" CELLPADDING="4" CELLSPACING="0">
+
+ <TD ALIGN="left" VALIGN="TOP"><LEFT>
+  <IMG SRC="../Images/Ocean.png" BORDER=0 ALT="BiAlith"><BR>
+  <FONT FACE="Times New Roman" SIZE="4" COLOR="#C0C0FF"><B>BiAlith</B></FONT><P>
+  <FONT FACE="Arial" SIZE="2" COLOR="#000000">
+   <A HREF="../index.html"><img src="../Images/BAHome.png" border="0" ALT="Home"></a><BR>
+   <A HREF="../BADownloads.htm"><img src="../Images/BASoftware.png" border="0" ALT="Software"></a><BR>
+   <A HREF="../BAResearch.htm"><img src="../Images/BAResearch.png" border="0" ALT="Research"></a><BR>
+   <A HREF="../BALinks.htm"><img src="../Images/BALinks.png" border="0" ALT="Links"></a><BR><BR>
+   <A HREF="../BADisclaimer.htm"><img src="../Images/BADisclaimer.png" border="0" ALT="Disclaimer"></a><BR>
+   <A HREF="../BAAboutus.htm"><img src="../Images/BAAbout.png" border="0" ALT="About Us"></a><BR>
+  </B></FONT>
+ </TD>
+ <TD ALIGN="center" VALIGN="TOP">
+
+
+<table>
+<tr>
+<td width="600" height="100">
+<a href="https://www.optarc.co.uk/deconvolve/index.html"  target="New"><img src="../Images/DnBtn.png" border="0"><font size="2"> For the latest deconvolution results, click here.</font></a>
+<p align="center"><font face="Arial Rounded MT Bold" size="4">Spatially Variant PSF Deconvolution</font></p>
+<p align="left"><font size="2">Some forms of blur cannot be described by a single PSF across the whole image. These types of blur include optical aberrations such as spherical aberrations and images showing variable focus levels in the same picture (e.g. close objects blurred, distant objects in focus or <I>vice versa</I>)<BR>
+Restoring these images reqiures deconvolution that can handle a separate PSF at every point in the image. Unfortunatley, very few software solutions allow this. Even those programs that claim to allow 'spatially variant PSF' deconvolution seem to fall short of true spatial variance in that they only allow the PSF to change from <I>one region</I> to another - within any given region the PSF must be constant. This is a severe limitation when dealing in real world situations where the PSF gradually and smoothly changes across the whole field or even radically changes within a small space (such as atmospheric turbulence blur).<BR>
+The Biaram programs ConvolVP and DeconVP are free of such limitations in that they allow spatially variant convolution and deconvolution with a completely separate PSF allowed for each and every pixel position in the input image. These PSFs need not be related and may be completely independent. Thus this is a truly spatially variant PSF implementation.<BR>
+One limitation of this powerful implementation, however, is that the running of these programs reqires a lot of computer resources. A small image of 128x128 pixels, having 16384 pixels, requires you to supply upto 16384 separate PSF files. In the following examples I have used small test images that have been blurred in the computer (using ConvolVP) with sets of PSFs generated mathematically to simulate certain types of blur. These therefore serve as a test of the accuracy of the algorithms rather than a demonstration of their application to real-world situations (where the main burden of effort will be in generating the PSF set)<BR>
+</font></p>
+<p align="left"><font face="Arial Rounded MT Bold" size="1">28.02.2008</font> 
+<table border>
+<tr>
+<td ><font size="2"><b>Golden gate bridge</b>: (a) This image shows that the very top of the tower is in focus but as you come closer to the ground the picture becomes more and more out-of-focus as would occur with a camera lens of narrow focal depth. (b) Shows the result of spatially variant PSF deconvolution with a gradually changing focus PSF. This would not be possible with ordinary deconvolution. The PSF is just a plain disc in form which varies (linearly with distance) in diameter from a single pixel Dirac pulse at the top to 11 pixels radius at the bottom. (The result took 1024 Landweber iterations on each colour channel)</td>
+</tr><tr>
+<td><p>a) <img src="../Images/VarDC/CV_GldnGt.png" border="0"> b) <img src="../Images/VarDC/DC_GldnGt.png" border="0"></td>
+</tr><tr>
+<td><font size="2"><b>Rosetta 1</b>: (a) An image of the Greek part of the Rosetta stone blurred to simulate spherical focus aberration. (b) Deconvolved with a spatially variant PSF which is a disc of diameter that increases towards the periphery of the field. The 'spherical aberrations' have been corrected. (The result took 4096 Landweber iterations)</td>
+</tr><tr>
+<td><p>a) <img src="../Images/VarDC/CV_Rosetta2.png" border="0"> b) <img src="../Images/VarDC/DC_Rosetta2.png" border="0"></td>
+</tr><tr>
+<td><font size="2"><b>Rosetta 2</b>: (a) An image of the Greek part of the Rosetta stone blurred to simulate a different form of spherical distortion as seen through an imperfectly shaped lens. (b) Deconvolved with a spatially variant PSF which is a line whose length and orientation changes throughout the field. The distortion has been corrected with some edge artefacts at the extreme boundaries. (The result took 4096 Landweber iterations)</td>
+</tr><tr>
+<td><p>a) <img src="../Images/VarDC/CV_Rosetta3.png" border="0"> b) <img src="../Images/VarDC/DC_Rosetta3.png" border="0"></td>
+</tr></table>
+
+ </TD>
+ </TABLE>
+
+    <table>
+    <tr align="center">
+    <p align="center">&nbsp;Copyright <img src="../Images/c2.png" border="0" alt="Copyright"><font face="Arial Rounded MT Bold"> Dr P. J. Tadrous 2000-2026</font></p>
+    <p><font face="Arial" size="1" color="navy"><a href="../SiteMap.htm">Site Map</a></font></p>
+    </tr>
+    </table>
+
+
+</TABLE>
+</body>
+</html>
